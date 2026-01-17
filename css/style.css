@@ -1602,20 +1602,3 @@ header.header-area {
     white-space: nowrap;
   }
 }
-/* ========== FIX KHUNG KHÔNG XÒE ========== */
-@media (max-width: 992px) {
-
-  .container,
-  .wrapper,
-  .main,
-  .page,
-  .layout,
-  .content {
-    max-width: 100% !important;
-    width: 100% !important;
-    padding-left: 12px;
-    padding-right: 12px;
-    margin: 0;
-  }
-
-}

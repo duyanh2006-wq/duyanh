@@ -1,0 +1,196 @@
+/* =====================================================
+   RESPONSIVE CSS
+   Áp dụng cho style.css hiện có
+   Nguyên tắc:
+   - Desktop (>=1200px): giữ nguyên style.css
+   - Chỉ ghi đè khi màn hình nhỏ
+===================================================== */
+
+
+/* =====================================================
+   1️⃣ LAPTOP NHỎ – TABLET NGANG (≤ 1200px)
+   👉 Giữ bố cục gần desktop
+   👉 Giảm số cột để không bị chật
+===================================================== */
+@media (max-width: 1200px) {
+
+  /* Ô tìm kiếm: ~45% header */
+  .search-box {
+    width: 45%;
+  }
+
+  /* Sản phẩm: 4 → 3 cột */
+  .product-row {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Danh mục sản phẩm: 5 → 4 cột */
+  .category-row {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  /* Danh sách iPhone: 5 → 4 cột */
+  .product-list {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  /* Banner phụ: 3 → 2 banner / hàng */
+  .banner-item {
+    flex: 0 0 calc(50% - 8px);
+  }
+}
+
+
+/* =====================================================
+   2️⃣ TABLET (≤ 992px)
+   👉 Header xuống hàng
+   👉 Nội dung dễ đọc – không bị ép
+===================================================== */
+@media (max-width: 992px) {
+
+  /* Header */
+  header {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  /* Search full width */
+  .search-box {
+    width: 100%;
+  }
+
+  /* Icon header trải đều */
+  .header-icons {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  /* Sản phẩm: 3 → 2 cột */
+  .product-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Danh mục: 4 → 3 cột */
+  .category-row {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* iPhone: 4 → 3 cột */
+  .product-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Footer: từ 3 cột → xếp dọc */
+  .footer-container {
+    flex-wrap: wrap;
+  }
+
+  .footer-col,
+  .footer-contact {
+    flex-basis: 100%;
+  }
+}
+
+
+/* =====================================================
+   3️⃣ MOBILE LỚN (≤ 768px)
+   👉 Ưu tiên nội dung
+   👉 Ẩn icon header
+===================================================== */
+@media (max-width: 768px) {
+
+  /* Top bar căn giữa */
+  .top-bar {
+    text-align: center;
+  }
+
+  /* Header xếp dọc */
+  header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .logo {
+    text-align: center;
+  }
+
+  /* Search full width */
+  .search-box {
+    width: 100%;
+  }
+
+  /* Ẩn icon header */
+  .header-icons {
+    display: none;
+  }
+
+  /* Menu xuống hàng */
+  nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  /* Sản phẩm: 2 cột */
+  .product-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Danh mục sản phẩm: 2 cột */
+  .category-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* iPhone: 2 cột */
+  .product-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Icon danh mục */
+  .category-list {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .category-item {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+
+/* =====================================================
+   4️⃣ MOBILE NHỎ (≤ 480px)
+   👉 1 cột – dễ đọc – dễ thao tác
+===================================================== */
+@media (max-width: 480px) {
+
+  /* Sản phẩm: 1 cột */
+  .product-row {
+    grid-template-columns: 1fr;
+  }
+
+  .category-row {
+    grid-template-columns: 1fr;
+  }
+
+  .product-list {
+    grid-template-columns: 1fr;
+  }
+
+  /* Banner phụ full width */
+  .banner-item {
+    flex: 0 0 100%;
+  }
+
+  /* Form đăng nhập */
+  .auth-form {
+    width: 90%;
+  }
+
+  /* Thanh toán */
+  .checkout-wrapper {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
